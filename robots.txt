@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://wellington-advocacia-imobiliaria.vercel.app/sitemap.xml
