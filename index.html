@@ -663,47 +663,74 @@
             background-color: var(--color-cream);
             border-top: 1px solid rgba(0,0,0,0.08);
             border-bottom: 1px solid rgba(0,0,0,0.08);
-            padding: 40px 0;
+            padding: 72px 0;
         }
 
         .authority-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 32px;
-            align-items: center;
+            gap: 24px;
+            align-items: stretch;
         }
 
         .authority-item {
             display: flex;
             align-items: center;
             gap: 16px;
+            background: #FFFFFF;
+            padding: 22px 20px;
+            border: 1px solid #E8E2DA;
+            border-radius: 2px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            transition: all 0.3s ease;
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+        .authority-item:hover {
+            transform: translateY(-2px);
+            border-color: var(--color-gold);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
         }
 
         .authority-icon {
-            width: 44px;
-            height: 44px;
-            background: #fff;
-            border: 1px solid rgba(0,0,0,0.1);
+            width: 56px;
+            height: 56px;
+            background: #FFFFFF;
+            border: 1px solid #E8E2DA;
+            border-radius: 2px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
             flex-shrink: 0;
-            color: var(--color-gold);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        .authority-icon svg {
+            width: 26px;
+            height: 26px;
+            stroke: var(--color-gold);
+            stroke-width: 1.75;
         }
 
         .authority-text h4 {
             font-family: var(--font-serif);
-            font-size: 0.95rem;
-            font-weight: 600;
+            font-size: 0.92rem;
+            font-weight: 700;
             color: var(--color-black);
-            margin-bottom: 2px;
+            margin-bottom: 4px;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            line-height: 1.3;
         }
 
         .authority-text p {
-            font-size: 0.8rem;
-            color: var(--color-muted);
-            letter-spacing: 0.05em;
+            font-family: var(--font-sans);
+            font-size: 0.82rem;
+            font-weight: 400;
+            color: #333330;
+            line-height: 1.45;
+            letter-spacing: 0.01em;
         }
 
         /* ESPECIALIDADES (SERVICES GRID) */
@@ -1742,12 +1769,17 @@
         </div>
     </section>
 
-    <!-- BARRA DE AUTORIDADE DISCRETA -->
+    <!-- BARRA DE AUTORIDADE ELEGANTE -->
     <section class="authority-strip">
         <div class="container">
             <div class="authority-grid reveal">
                 <div class="authority-item">
-                    <div class="authority-icon">📍</div>
+                    <div class="authority-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                    </div>
                     <div class="authority-text">
                         <h4>Atendimento em São Paulo</h4>
                         <p>Presencial & Registro de Imóveis</p>
@@ -1755,7 +1787,13 @@
                 </div>
 
                 <div class="authority-item">
-                    <div class="authority-icon">🌐</div>
+                    <div class="authority-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="2" y1="12" x2="22" y2="12"/>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                        </svg>
+                    </div>
                     <div class="authority-text">
                         <h4>Atendimento Online</h4>
                         <p>Para todo o Brasil</p>
@@ -1763,7 +1801,14 @@
                 </div>
 
                 <div class="authority-item">
-                    <div class="authority-icon">🤝</div>
+                    <div class="authority-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m11 17 2 2a1 1 0 0 0 1.4 0l4.3-4.3a2 2 0 0 0 0-2.8l-3.1-3.1a2 2 0 0 0-2.8 0L10 12"/>
+                            <path d="m14 14 2.5 2.5a1 1 0 0 0 1.4 0l2.5-2.5"/>
+                            <path d="M2.5 12 7 16.5a2 2 0 0 0 2.8 0l3.5-3.5"/>
+                            <path d="M7 7.5 10.5 11"/>
+                        </svg>
+                    </div>
                     <div class="authority-text">
                         <h4>Atendimento Personalizado</h4>
                         <p>Condução Direta pelo Advogado</p>
@@ -1771,7 +1816,15 @@
                 </div>
 
                 <div class="authority-item">
-                    <div class="authority-icon">⚖️</div>
+                    <div class="authority-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/>
+                            <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/>
+                            <path d="M7 21h10"/>
+                            <path d="M12 3v18"/>
+                            <path d="M3 7h18"/>
+                        </svg>
+                    </div>
                     <div class="authority-text">
                         <h4>Advocacia Especializada</h4>
                         <p>100% Foco em Direito Imobiliário</p>
