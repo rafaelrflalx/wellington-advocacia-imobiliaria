@@ -116,6 +116,18 @@
             display: block;
         }
 
+        /* Scroll Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.8s var(--transition-smooth), transform 0.8s var(--transition-smooth);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         /* Container Layout */
         .container {
             width: 100%;
@@ -328,7 +340,7 @@
         }
 
         .hero-content h1 {
-            font-size: clamp(2.3rem, 3.8vw, 3.5rem);
+            font-size: clamp(2.4rem, 4vw, 3.6rem);
             line-height: 1.15;
             margin-bottom: 24px;
             color: var(--color-black);
@@ -576,6 +588,54 @@
             margin: 36px 0;
         }
 
+        /* BARRA DE AUTORIDADE ELEGANTE */
+        .authority-strip {
+            background-color: var(--color-cream);
+            border-top: 1px solid rgba(0,0,0,0.08);
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+            padding: 40px 0;
+        }
+
+        .authority-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+            align-items: center;
+        }
+
+        .authority-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .authority-icon {
+            width: 44px;
+            height: 44px;
+            background: #fff;
+            border: 1px solid rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            color: var(--color-gold);
+        }
+
+        .authority-text h4 {
+            font-family: var(--font-serif);
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--color-black);
+            margin-bottom: 2px;
+        }
+
+        .authority-text p {
+            font-size: 0.8rem;
+            color: var(--color-muted);
+            letter-spacing: 0.05em;
+        }
+
         /* ESPECIALIDADES (SERVICES GRID) */
         .section-services {
             padding: 140px 0;
@@ -716,6 +776,11 @@
             padding: 40px 32px;
             border: 1px solid rgba(0,0,0,0.08);
             position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .step-card:hover {
+            transform: translateY(-4px);
         }
 
         .step-num {
@@ -737,7 +802,7 @@
             line-height: 1.65;
         }
 
-        /* DEPOIMENTOS DE CLIENTES / PROVA SOCIAL GOOGLE */
+        /* PROVA SOCIAL / AVALIAÇÕES GOOGLE */
         .section-testimonials {
             padding: 140px 0;
             background-color: var(--color-black);
@@ -816,7 +881,7 @@
         }
 
         .faq-accordion {
-            max-width: 840px;
+            max-width: 880px;
             margin: 64px auto 0 auto;
         }
 
@@ -826,12 +891,12 @@
 
         .faq-button {
             width: 100%;
-            padding: 28px 0;
+            padding: 26px 0;
             background: none;
             border: none;
             text-align: left;
             font-family: var(--font-serif);
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             color: var(--color-black);
             cursor: pointer;
             display: flex;
@@ -878,7 +943,7 @@
         }
 
         .faq-item.active .faq-content {
-            max-height: 300px;
+            max-height: 350px;
             padding-bottom: 28px;
         }
 
@@ -1069,9 +1134,9 @@
 
         /* RESPONSIVE MEDIA QUERIES */
         @media (max-width: 1024px) {
-            .hero-grid, .about-grid, .cta-grid, .exclusivity-box, .google-social-proof {
+            .hero-grid, .about-grid, .cta-grid, .exclusivity-box, .google-social-proof, .authority-grid {
                 grid-template-columns: 1fr;
-                gap: 36px;
+                gap: 32px;
             }
 
             .services-grid, .differentials-grid, .process-steps {
@@ -1137,7 +1202,7 @@
                     <a href="#diferenciais" class="nav-link">Diferenciais</a>
                     <a href="#processo" class="nav-link">Como Funciona</a>
                     <a href="#faq" class="nav-link">Dúvidas</a>
-                    <a href="https://wa.me/5511967087951" target="_blank" rel="noopener" class="btn-primary" style="padding: 12px 24px; font-size: 0.75rem;">Fale pelo WhatsApp</a>
+                    <a href="https://wa.me/5511967087951" target="_blank" rel="noopener" class="btn-primary" style="padding: 12px 24px; font-size: 0.75rem;">Falar com um Especialista</a>
                 </nav>
             </div>
         </div>
@@ -1148,8 +1213,8 @@
         <div class="container">
             <div class="hero-grid">
                 <!-- Coluna Texto -->
-                <div class="hero-content">
-                    <span class="eyebrow">Advocacia Imobiliária Especializada</span>
+                <div class="hero-content reveal">
+                    <span class="eyebrow">Advocacia Imobiliária Especializada em São Paulo</span>
                     
                     <!-- GOOGLE RATING BADGE -->
                     <div>
@@ -1161,15 +1226,15 @@
 
                     <h1>Proteção Patrimonial & Soluções Jurídicas de <span class="gold">Alta Complexidade</span> para Imóveis.</h1>
                     <p class="hero-subtitle">
-                        Atuação especializada em Regularização de Imóveis, Usucapião, Adjudicação Compulsória, Imissão na Posse e Due Diligence Imobiliária em São Paulo.
+                        Defesa estratégica da propriedade, regularização registral e blindagem jurídica para proprietários, compradores e investidores em São Paulo.
                     </p>
 
                     <div class="hero-ctas">
                         <a href="https://wa.me/5511967087951" target="_blank" rel="noopener" class="btn-primary btn-gold">
-                            Agendar Atendimento via WhatsApp
+                            Falar com um Especialista
                         </a>
-                        <a href="#especialidades" class="btn-secondary">
-                            Conhecer Especialidades
+                        <a href="#contato" class="btn-secondary">
+                            Solicitar Análise do Seu Caso
                         </a>
                     </div>
 
@@ -1190,7 +1255,7 @@
                 </div>
 
                 <!-- Coluna Foto Advogado -->
-                <div class="hero-photo-wrapper">
+                <div class="hero-photo-wrapper reveal">
                     <div class="hero-photo-backdrop"></div>
                     <div class="hero-photo-frame">
                         <img src="assets/img/dr.wellington_ripado.jpeg" alt="Wellington Alvim - Advogado Imobiliário">
@@ -1207,7 +1272,7 @@
     <!-- SEÇÃO DE ALERTA DE EXCLUSIVIDADE (FILTRAGEM ATIVA) -->
     <section class="section-exclusivity">
         <div class="container">
-            <div class="exclusivity-box">
+            <div class="exclusivity-box reveal">
                 <div class="exclusivity-title">
                     <span class="eyebrow eyebrow-dark" style="color: var(--color-gold);">Posicionamento Institucional</span>
                     <h2>Atuação Estritamente Especializada</h2>
@@ -1240,13 +1305,13 @@
     <section class="section-about" id="sobre">
         <div class="container">
             <div class="about-grid">
-                <div class="about-image-wrapper">
+                <div class="about-image-wrapper reveal">
                     <div class="about-image">
                         <img src="assets/img/dr.wellington_sentido.jpeg" alt="Wellington Alvim Advocacia Imobiliária">
                     </div>
                 </div>
 
-                <div class="about-content">
+                <div class="about-content reveal">
                     <span class="eyebrow">Autoridade & Tradição</span>
                     <h2>Rigor Técnico e Segurança Jurídica em Cada Operação Imobiliária.</h2>
                     <p>
@@ -1260,96 +1325,135 @@
                         "A verdadeira segurança imobiliária não reside apenas em vencer litígios, mas em blindar o patrimônio antes que qualquer risco se concretize."
                     </div>
 
-                    <a href="https://wa.me/5511967087951" target="_blank" rel="noopener" class="btn-primary">Fale pelo WhatsApp</a>
+                    <a href="https://wa.me/5511967087951" target="_blank" rel="noopener" class="btn-primary">Agendar uma Consulta</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ESPECIALIDADES EXCLUSIVAS -->
+    <!-- BARRA DE AUTORIDADE DISCRETA -->
+    <section class="authority-strip">
+        <div class="container">
+            <div class="authority-grid reveal">
+                <div class="authority-item">
+                    <div class="authority-icon">📍</div>
+                    <div class="authority-text">
+                        <h4>Atendimento em São Paulo</h4>
+                        <p>Presencial & Registro de Imóveis</p>
+                    </div>
+                </div>
+
+                <div class="authority-item">
+                    <div class="authority-icon">🌐</div>
+                    <div class="authority-text">
+                        <h4>Atendimento Online</h4>
+                        <p>Para todo o Brasil</p>
+                    </div>
+                </div>
+
+                <div class="authority-item">
+                    <div class="authority-icon">🤝</div>
+                    <div class="authority-text">
+                        <h4>Atendimento Personalizado</h4>
+                        <p>Condução Direta pelo Advogado</p>
+                    </div>
+                </div>
+
+                <div class="authority-item">
+                    <div class="authority-icon">⚖️</div>
+                    <div class="authority-text">
+                        <h4>Advocacia Especializada</h4>
+                        <p>100% Foco em Direito Imobiliário</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ESPECIALIDADES EXCLUSIVAS (CARD BENEFITS REFINED) -->
     <section class="section-services" id="especialidades">
         <div class="container">
-            <div class="services-header">
+            <div class="services-header reveal">
                 <span class="eyebrow" style="color: var(--color-gold);">Foco Exclusivo</span>
                 <h2>Áreas de Atuação em Advocacia Imobiliária</h2>
-                <p>Soluções jurídicas direcionadas exclusivamente para o mercado e direito imobiliário.</p>
+                <p>Soluções jurídicas direcionadas exclusivamente para a proteção e regularização patrimonial imobiliária.</p>
             </div>
 
             <div class="services-grid">
-                <!-- Card 1 -->
-                <div class="service-card">
+                <!-- Card 1: Regularização Imobiliária -->
+                <div class="service-card reveal">
                     <div>
                         <div class="service-number">01 /</div>
-                        <h3>Regularização de Imóveis</h3>
-                        <p>Processos de regularização registral, adequação de matrículas, retificação de área, desmembramento e averbações de imóveis urbanos e rurais.</p>
+                        <h3>Regularização Imobiliária</h3>
+                        <p>Evite riscos futuros e desvalorização regularizando toda a documentação, matrículas, desmembramentos e registros do seu imóvel.</p>
                     </div>
                     <a href="https://wa.me/5511967087951" target="_blank" rel="noopener" class="service-link">
-                        Consultar Regularização
+                        Solicitar Análise
                         <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </a>
                 </div>
 
-                <!-- Card 2 -->
-                <div class="service-card">
+                <!-- Card 2: Usucapião -->
+                <div class="service-card reveal">
                     <div>
                         <div class="service-number">02 /</div>
-                        <h3>Usucapião</h3>
-                        <p>Obtenção da propriedade definitiva de imóveis através de Usucapião Extrajudicial no Cartório ou via Judicial com celeridade técnica.</p>
+                        <h3>Usucapião (Cartório ou Judicial)</h3>
+                        <p>Regularize juridicamente a propriedade do seu imóvel com segurança e a celeridade dos procedimentos cartorários extrajudiciais.</p>
                     </div>
                     <a href="https://wa.me/5511967087951" target="_blank" rel="noopener" class="service-link">
-                        Avaliar Usucapião
+                        Falar com Especialista
                         <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </a>
                 </div>
 
-                <!-- Card 3 -->
-                <div class="service-card">
+                <!-- Card 3: Adjudicação Compulsória -->
+                <div class="service-card reveal">
                     <div>
                         <div class="service-number">03 /</div>
                         <h3>Adjudicação Compulsória</h3>
-                        <p>Medida legal ágil para obtenção da carta de adjudicação e transferência definitiva da escritura quando o vendedor recusa ou faleceu.</p>
+                        <p>Garanta judicialmente a transferência do imóvel quando houver recusa injustificada, falecimento ou sumiço do vendedor.</p>
                     </div>
                     <a href="https://wa.me/5511967087951" target="_blank" rel="noopener" class="service-link">
-                        Obter Escritura Definitiva
+                        Garantir Transferência
                         <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </a>
                 </div>
 
-                <!-- Card 4 -->
-                <div class="service-card">
+                <!-- Card 4: Imissão na Posse -->
+                <div class="service-card reveal">
                     <div>
                         <div class="service-number">04 /</div>
-                        <h3>Imissão na Posse & Ações Possessórias</h3>
-                        <p>Defesa e recuperação da posse de imóveis, ação de imissão na posse de arrematados em leilão, reintegração e manutenção possessória.</p>
+                        <h3>Imissão na Posse & Possessórias</h3>
+                        <p>Proteja seu direito de tomar posse do imóvel adquirido e blinde o seu patrimônio contra invasões, esbulho e turbação.</p>
                     </div>
                     <a href="https://wa.me/5511967087951" target="_blank" rel="noopener" class="service-link">
-                        Garantir a Posse
+                        Proteger a Posse
                         <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </a>
                 </div>
 
-                <!-- Card 5 -->
-                <div class="service-card">
+                <!-- Card 5: Due Diligence Imobiliária -->
+                <div class="service-card reveal">
                     <div>
                         <div class="service-number">05 /</div>
                         <h3>Due Diligence Imobiliária</h3>
-                        <p>Auditoria jurídica minuciosa pré-aquisição. Análise completa de certidões, matrícula, dívidas, proprietários e riscos futuros.</p>
+                        <p>Auditoria prévia minuciosa de certidões, matrícula e proprietários para evitar fraudes, dívidas e prejuízos antes da compra.</p>
                     </div>
                     <a href="https://wa.me/5511967087951" target="_blank" rel="noopener" class="service-link">
-                        Solicitar Due Diligence
+                        Solicitar Auditoria
                         <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </a>
                 </div>
 
-                <!-- Card 6 -->
-                <div class="service-card">
+                <!-- Card 6: Compra e Venda & Contratos -->
+                <div class="service-card reveal">
                     <div>
                         <div class="service-number">06 /</div>
-                        <h3>Contratos de Compra e Venda</h3>
-                        <p>Elaboração e análise técnica de contratos imobiliários de compra, venda, permuta, promessas e cessões de direitos com total proteção.</p>
+                        <h3>Compra e Venda & Contratos</h3>
+                        <p>Mais segurança jurídica em negociações imobiliárias, promessas, permutas e estruturação contratual de alto valor.</p>
                     </div>
                     <a href="https://wa.me/5511967087951" target="_blank" rel="noopener" class="service-link">
-                        Elaborar Contrato Seguro
+                        Conversar pelo WhatsApp
                         <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </a>
                 </div>
@@ -1363,7 +1467,7 @@
             <span class="eyebrow">Por que Escolher o Escritório</span>
             <h2 style="font-size: clamp(2rem, 3vw, 2.6rem);">Diferenciais em Advocacia Imobiliária</h2>
 
-            <div class="differentials-grid">
+            <div class="differentials-grid reveal">
                 <div class="diff-item">
                     <h3>Atendimento 24 Horas</h3>
                     <p>Canais de atendimento continuo preparados para responder demandas e orientações imobiliárias com agilidade.</p>
@@ -1387,12 +1491,12 @@
     <!-- PROCESSO DE ATENDIMENTO -->
     <section class="section-process" id="processo">
         <div class="container">
-            <div style="text-align: center; max-width: 680px; margin: 0 auto 64px auto;">
+            <div style="text-align: center; max-width: 680px; margin: 0 auto 64px auto;" class="reveal">
                 <span class="eyebrow">Etapas Transparentes</span>
                 <h2>Como Funciona o Nosso Atendimento</h2>
             </div>
 
-            <div class="process-steps">
+            <div class="process-steps reveal">
                 <div class="step-card">
                     <div class="step-num">01</div>
                     <h3>Triagem Especializada</h3>
@@ -1427,7 +1531,7 @@
             <h2 style="color: var(--color-white); font-size: clamp(2rem, 3vw, 2.6rem);">Reputação e Avaliações de Clientes</h2>
 
             <!-- GOOGLE BADGE CARD -->
-            <div class="google-social-proof">
+            <div class="google-social-proof reveal">
                 <div class="google-proof-info">
                     <h3>⭐ 4,8 de 5 no Google</h3>
                     <p>⭐ 4,8 de 5 com base em 25 avaliações no Google.</p>
@@ -1438,7 +1542,7 @@
                 </div>
             </div>
 
-            <div class="testimonials-grid">
+            <div class="testimonials-grid reveal">
                 <div class="testimonial-card">
                     <div class="testimonial-text">
                         "Atendimento extremamente especializado em regularização imobiliária. Transparência total na análise das certidões e agilidade registral."
@@ -1462,52 +1566,111 @@
         </div>
     </section>
 
-    <!-- FAQ -->
+    <!-- FAQ AMPLIAÇÃO (9 PERGUNTAS DE ALTO IMPACTO & SEO) -->
     <section class="section-faq" id="faq">
         <div class="container">
-            <div style="text-align: center; max-width: 680px; margin: 0 auto;">
+            <div style="text-align: center; max-width: 680px; margin: 0 auto;" class="reveal">
                 <span class="eyebrow">Esclarecimentos Técnicos</span>
                 <h2>Perguntas Frequentes sobre Advocacia Imobiliária</h2>
             </div>
 
-            <div class="faq-accordion">
+            <div class="faq-accordion reveal">
+                <!-- FAQ 1 -->
                 <div class="faq-item">
                     <button class="faq-button">
-                        <span>É possível fazer Usucapião diretamente no Cartório sem processo na Justiça?</span>
+                        <span>Como saber se o meu imóvel pode ser regularizado por Usucapião Extrajudicial?</span>
                         <div class="faq-icon"></div>
                     </button>
                     <div class="faq-content">
-                        <p>Sim. Através do Usucapião Extrajudicial o procedimento é realizado diretamente no Cartório de Registro de Imóveis competente, reduzindo o tempo de regularização desde que os requisitos documentais estejam preenchidos.</p>
+                        <p>O Usucapião Extrajudicial no Cartório de Imóveis exige posse mansa, pacífica, contínua e sem oposição pelo tempo exigido em lei (de 5 a 15 anos a depender da espécie), instruído com ata notarial, planta e documentos comprobatórios. Na consulta analisamos a viabilidade documental prévia.</p>
                     </div>
                 </div>
 
+                <!-- FAQ 2 -->
                 <div class="faq-item">
                     <button class="faq-button">
-                        <span>Quando é necessária a Adjudicação Compulsória?</span>
+                        <span>O que fazer quando o vendedor sumiu ou se recusa a assinar a escritura definitiva?</span>
                         <div class="faq-icon"></div>
                     </button>
                     <div class="faq-content">
-                        <p>A Adjudicação Compulsória é indicada quando o comprador quitou o contrato de compra e venda, mas o vendedor não assinou a escritura definitiva por recusa, falecimento ou localização incerta.</p>
+                        <p>Quando há a quitação integral do imóvel e o promitente vendedor recusar, falecer ou não for localizado, a solução jurídica adequada é a Adjudicação Compulsória (judicial ou cartorária), obtendo a transferência formal do bem diretamente para a sua matrícula.</p>
                     </div>
                 </div>
 
+                <!-- FAQ 3 -->
                 <div class="faq-item">
                     <button class="faq-button">
-                        <span>Qual a função da Due Diligence Imobiliária na compra de um imóvel?</span>
+                        <span>O que é a Ação de Imissão na Posse e quando ela é necessária?</span>
                         <div class="faq-icon"></div>
                     </button>
                     <div class="faq-content">
-                        <p>A Due Diligence realiza uma auditoria jurídica prévia sobre o imóvel, certidões e alienantes para identificar riscos de penhora, dívidas ou fraudes antes do pagamento do sinal.</p>
+                        <p>A Imissão na Posse é a medida cabível para o proprietário legítimo que possui a escritura ou carta de arrematação em leilão, mas nunca teve a posse de fato porque o imóvel encontra-se ocupado injustamente por terceiros.</p>
                     </div>
                 </div>
 
+                <!-- FAQ 4 -->
                 <div class="faq-item">
                     <button class="faq-button">
-                        <span>Como funciona a Ação de Imissão na Posse?</span>
+                        <span>Qual a importância da Due Diligence jurídica antes de comprar um imóvel?</span>
                         <div class="faq-icon"></div>
                     </button>
                     <div class="faq-content">
-                        <p>A Ação de Imissão na Posse assegura o direito do proprietário legal (como arrematantes de leilão ou compradores com escritura) de obter a posse efetiva do imóvel ocupado indevidamente.</p>
+                        <p>A Due Diligence analisa previamente todo o histórico da matrícula, certidões dos vendedores, passivos fiscais, trabalhistas e judiciais. Essa investigação blinda o comprador contra perdas patrimoniais ou cancelamentos de venda futuros.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="faq-item">
+                    <button class="faq-button">
+                        <span>Quanto tempo leva o processo de regularização de matrícula no Cartório de Imóveis?</span>
+                        <div class="faq-icon"></div>
+                    </button>
+                    <div class="faq-content">
+                        <p>Pela via extrajudicial, procedimentos registrais costumam levar entre 3 a 8 meses, significativamente mais rápidos do que a via judicial tradicional que pode estender-se por anos.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 6 -->
+                <div class="faq-item">
+                    <button class="faq-button">
+                        <span>Posso regularizar um imóvel urbano ou comercial que possui apenas contrato de gaveta?</span>
+                        <div class="faq-icon"></div>
+                    </button>
+                    <div class="faq-content">
+                        <p>Sim. Contratos de promessa de compra e venda não registrados ("contratos de gaveta") podem ser regularizados via usucapião extrajudicial ou adjudicação compulsória, convertendo a posse informal na matrícula definitiva do imóvel.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 7 -->
+                <div class="faq-item">
+                    <button class="faq-button">
+                        <span>Como funciona a defesa da posse em casos de esbulho, invasão ou litígio possessório?</span>
+                        <div class="faq-icon"></div>
+                    </button>
+                    <div class="faq-content">
+                        <p>Em caso de esbulho ou ameaça à posse, ingressamos com Ação de Reintegração ou Manutenção de Posse com pedido liminar urgente para restituição imediata do bem e imposição de multa por nova tentativa de turbação.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 8 -->
+                <div class="faq-item">
+                    <button class="faq-button">
+                        <span>O atendimento jurídico pode ser realizado de forma 100% online?</span>
+                        <div class="faq-icon"></div>
+                    </button>
+                    <div class="faq-content">
+                        <p>Sim. Devido à digitalização dos processos judiciais e sistemas registrais de imóveis (ONR), realizamos reuniões virtuais seguras, análise de PDFs de matrículas e envios documentais para clientes em todo o Brasil e no exterior.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 9 -->
+                <div class="faq-item">
+                    <button class="faq-button">
+                        <span>O escritório atua em outras áreas do direito além da Advocacia Imobiliária?</span>
+                        <div class="faq-icon"></div>
+                    </button>
+                    <div class="faq-content">
+                        <p>Não. Atuamos com foco 100% exclusivo em Direito Imobiliário para manter a excelência técnica e dedicação artesanal a cada caso imobiliário atendido.</p>
                     </div>
                 </div>
             </div>
@@ -1518,11 +1681,11 @@
     <section class="section-cta" id="contato">
         <div class="container">
             <div class="cta-grid">
-                <div class="cta-info">
+                <div class="cta-info reveal">
                     <span class="eyebrow" style="color: var(--color-gold);">Atendimento 24 Horas</span>
                     <h2>Proteja o Seu Patrimônio Imobiliário com Especialistas.</h2>
                     <p>
-                        Fale diretamente com a equipe da <strong>Wellington Alvim Advocacia Imobiliária</strong> pelo WhatsApp ou agende seu atendimento presencial.
+                        Fale diretamente com a equipe da <strong>Wellington Alvim Advocacia Imobiliária</strong> pelo WhatsApp ou solicite a análise prévia do seu caso.
                     </p>
 
                     <div class="cta-details">
@@ -1552,8 +1715,8 @@
                 </div>
 
                 <!-- FORMULÁRIO -->
-                <div class="form-card">
-                    <h3>Solicitar Atendimento Imobiliário</h3>
+                <div class="form-card reveal">
+                    <h3>Solicitar Análise do Seu Caso</h3>
                     <p class="form-sub">Preencha abaixo para direcionamento direto no WhatsApp oficial.</p>
 
                     <form id="contactForm" onsubmit="handleFormSubmit(event)">
@@ -1576,7 +1739,7 @@
                                 <option value="adjudicacao">Adjudicação Compulsória</option>
                                 <option value="posse">Imissão na Posse / Ações Possessórias</option>
                                 <option value="duediligence">Due Diligence Imobiliária</option>
-                                <option value="contrato">Contratos de Compra e Venda</option>
+                                <option value="contrato">Compra e Venda & Contratos</option>
                             </select>
                         </div>
 
@@ -1586,7 +1749,7 @@
                         </div>
 
                         <button type="submit" class="btn-primary btn-gold" style="width: 100%;">
-                            Falar pelo WhatsApp Oficial
+                            Conversar pelo WhatsApp
                         </button>
                     </form>
                 </div>
@@ -1647,13 +1810,13 @@
     </footer>
 
     <!-- BOTÃO FLUTUANTE WHATSAPP -->
-    <a href="https://wa.me/5511967087951" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Falar no WhatsApp Oficial">
+    <a href="https://wa.me/5511967087951" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Conversar pelo WhatsApp">
         <svg viewBox="0 0 32 32">
-            <path d="M16 2A13.9 13.9 0 0 0 2 15.9c0 2.5.6 4.9 1.8 7.1L2 29.8l7-1.8A13.8 13.8 0 0 0 16 29.8 13.9 13.9 0 0 0 29.8 16 13.9 13.9 0 0 0 16 2zM16 27.5c-2.1 0-4.2-.6-6-1.6l-.4-.3-4.4 1.1 1.2-4.3-.3-.5A11.5 11.5 0 1 1 16 27.5zm6.3-8.6c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.7.2s-.8 1.1-1 1.3c-.2.2-.4.2-.7.1s-1.4-.5-2.6-1.6c-1-1-1.7-2.1-1.9-2.5-.2-.3 0-.5.1-.7l.5-.6c.2-.2.3-.4.4-.6s0-.4-.1-.6c-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4s-1.2 1.2-1.2 2.9 1.2 3.4 1.4 3.6c.2.2 2.4 3.7 5.8 5.2.8.4 1.4.6 1.9.8 1 .3 1.8.3 2.5.2.8-.1 2.3-1 2.6-1.9.4-1 .4-1.8.3-1.9-.1-.2-.3-.3-.6-.5z"/>
+            <path d="M16 2A13.9 13.9 0 0 0 2 15.9c0 2.5.6 4.9 1.8 7.1L2 29.8l7-1.8A13.8 13.8 0 0 0 16 29.8 13.9 13.9 0 0 0 16 2zM16 27.5c-2.1 0-4.2-.6-6-1.6l-.4-.3-4.4 1.1 1.2-4.3-.3-.5A11.5 11.5 0 1 1 16 27.5zm6.3-8.6c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.7.2s-.8 1.1-1 1.3c-.2.2-.4.2-.7.1s-1.4-.5-2.6-1.6c-1-1-1.7-2.1-1.9-2.5-.2-.3 0-.5.1-.7l.5-.6c.2-.2.3-.4.4-.6s0-.4-.1-.6c-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4s-1.2 1.2-1.2 2.9 1.2 3.4 1.4 3.6c.2.2 2.4 3.7 5.8 5.2.8.4 1.4.6 1.9.8 1 .3 1.8.3 2.5.2.8-.1 2.3-1 2.6-1.9.4-1 .4-1.8.3-1.9-.1-.2-.3-.3-.6-.5z"/>
         </svg>
     </a>
 
-    <!-- JAVASCRIPT FOR INTERACTION -->
+    <!-- JAVASCRIPT FOR INTERACTION & REVEAL ANIMATION -->
     <script>
         // Header scroll effect
         window.addEventListener('scroll', function() {
@@ -1663,6 +1826,25 @@
             } else {
                 header.classList.remove('scrolled');
             }
+        });
+
+        // Scroll Reveal Observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            revealObserver.observe(el);
         });
 
         // FAQ Accordion Toggle
